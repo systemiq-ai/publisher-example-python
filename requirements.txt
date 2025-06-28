@@ -1,0 +1,6 @@
+# Core dependencies
+grpcio>=1.73.1
+grpcio-tools>=1.73.1
+protobuf
+googleapis-common-protos
+watchdog
