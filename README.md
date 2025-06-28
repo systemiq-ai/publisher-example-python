@@ -112,7 +112,7 @@ Here is a basic example:
 services:
 
   middleware:
-    image: todo-middleware:latest
+    image: ghcr.io/systemiq-ai/middleware:latest
     environment:
       - AUTH_EMAIL=middleware+1234@systemiq.ai # IAM user email
       - AUTH_PASSWORD=supersecret # Password for the IAM user
