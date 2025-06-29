@@ -140,8 +140,4 @@ docker compose up
 
 ## License
 
-MIT
-
----
-
-This script is intended as a simple base for integrating with a Middleware system that expects structured batches of data.
+MIT © [systemiq.ai](https://systemiq.ai)
