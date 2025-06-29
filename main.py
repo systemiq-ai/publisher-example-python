@@ -46,9 +46,13 @@ def main():
     # file_data = fetch_file_data(file)
     # logging.info(f"Publishing file data to Middleware: {file_data}")
 
-    # Send a batch of data to Middleware for processing
-    # status = publisher.batch(ELEMENT_ID, [file_data], "process_files")
-    # logging.info(f"Status {status}")
+    # Send a batch of file data to Middleware for processing
+    # status = publisher.batch(ELEMENT_ID, [file_data], "process")
+    # logging.info(f"Status: {status}")
+
+    # Send a batch of file data to Middleware for storing
+    # status = publisher.batch(ELEMENT_ID, [file_data], "store")
+    # logging.info(f"Status: {status}")
 
     # Periodically collect and publish simulated data values
     while True:
@@ -58,7 +62,7 @@ def main():
 
             # Send a batch of data to Middleware for processing
             status = publisher.batch(ELEMENT_ID, [data], "process")
-            logging.info(f"Status {status}")
+            logging.info(f"Status: {status}") # Status: SUCCESS
         except Exception as e:
             logging.error(f"Error publishing data: {e}")
 

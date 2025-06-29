@@ -44,11 +44,11 @@ Uncomment the relevant lines in `main()` to activate publishing.
 # To set a custom indicator instead of using the default:
 # publisher.set_indicator("custom_indicator_name")
 
-# To publish file:
-# publisher.batch(ELEMENT_ID, [file_data], "process_files")
-
-# To publish data:
+# To publish data or files:
 # publisher.batch(ELEMENT_ID, [data], "process")
+
+# To store files:
+# publisher.batch(ELEMENT_ID, [file_data], "store")
 ```
 
 Run the script:
@@ -117,6 +117,7 @@ services:
       - AUTH_EMAIL=middleware+1234@systemiq.ai # IAM user email
       - AUTH_PASSWORD=supersecret # Password for the IAM user
       - AUTH_CLIENT_ID=2 # Client ID issued by IAM
+      - TEST_MODE=true # Optional. default false
 
   publisher-example:
     build: .
@@ -125,6 +126,8 @@ services:
       - MIDDLEWARE_ENDPOINT=middleware:50051
     depends_on:
       - middleware
+    volumes:
+      - ./publisher_example:/app # Mount for hot-reloading
 ```
 
 This setup allows the publisher to connect to the middleware service directly using the internal hostname `middleware`.
